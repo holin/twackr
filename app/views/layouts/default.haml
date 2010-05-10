@@ -31,6 +31,7 @@
           = link_to t('nav.clients'), clients_path,   :class => (controller.class == ClientsController ? 'active' : nil)
           = link_to t('nav.services'), services_path, :class => (controller.class == ServicesController ? 'active' : nil)
           = link_to t('nav.account'), '/settings',    :class => (controller.class == UsersController ? 'active' : nil)
+          = link_to t('nav.all'), '/all', :class => (controller.class == AllController ? 'active' : nil)
           = link_to_remote t('nav.logout'), :url => logout_path, :method => :destroy
         = navigation_for_page
         .clear

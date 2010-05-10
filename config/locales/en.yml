@@ -22,6 +22,7 @@ en:
     services: Services
     account: Account
     logout: Logout
+    all: All
   tabs:
     add: Add
     all: All

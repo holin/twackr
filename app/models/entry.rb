@@ -190,7 +190,7 @@ class Entry < ActiveRecord::Base
   end
   
   def date
-    self.start_date.to_date
+    self.start_date ? self.start_date.to_date : Time.now.to_date
   end
   
   def hours

@@ -40,7 +40,7 @@ protected
   end
   
   def set_time_zone
-    Time.zone = @logged_user.timezone
+    Time.zone = @logged_user.timezone rescue 'Beijing'
     @time_now = Time.zone.now
     @date_now = @time_now.to_date
   end

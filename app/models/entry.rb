@@ -175,7 +175,7 @@ class Entry < ActiveRecord::Base
       Time.now - self.start_date rescue 4
     else
       # Diff between start and end
-      self.done_date - self.start_date
+      self.done_date - self.start_date rescue 10
     end
   end
 

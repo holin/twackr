@@ -154,7 +154,7 @@ class Entry < ActiveRecord::Base
   
   def terminate
     self.done_date = Time.now
-    self.seconds = self.done_date - self.start_date
+    self.seconds = self.done_date - self.start_date rescue 10
   end
   
   def clone_from(other)

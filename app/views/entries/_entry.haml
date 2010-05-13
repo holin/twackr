@@ -1,4 +1,4 @@
-.entry{:id => "entry_#{entry.id}", :times => entry.current_time.floor}
+.entry{:id => "entry_#{entry.id}", :times => entry.current_time.try(:floor)}
   .actions	
     = link_to_remote t('actions.edit'), :url => edit_entry_path(entry), :method => :get
     - unless entry.terminated?

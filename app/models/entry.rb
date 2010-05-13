@@ -172,7 +172,7 @@ class Entry < ActiveRecord::Base
   def current_time
     if self.done_date.nil?
       # Use start
-      Time.now - self.start_date rescue 0
+      Time.now - self.start_date rescue 4
     else
       # Diff between start and end
       self.done_date - self.start_date

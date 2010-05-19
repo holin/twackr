@@ -1,5 +1,5 @@
 #entryBox
-  - remote_form_for entry, :url => entries_path do |f|
+  - remote_form_for entry, :url => entries_path, :success => 'clear_content()' do |f|
     - unless project.nil?
       = hidden_field_tag 'entry[project_id]', project.id
     - unless service.nil?

@@ -120,3 +120,6 @@ Timer = {
 	}
 };
 
+function clear_content(f) {
+	$("entry_content").value = "";
+}

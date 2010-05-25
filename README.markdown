@@ -10,7 +10,7 @@ Tracked time can be categorised into @projects and #services. In addition to the
 Simply run the following:
 
     rake db:auto:migrate
-	script/server
+    script/server
 
 And create a user. It couldn't be any simpler!
 

@@ -89,7 +89,7 @@ class EntriesController < ApplicationController
   
   def show
     respond_to do |f|
-      f.js { render :action => :update }
+      f.js { render :template => "entries/update.js.rjs" }
     end
   end
   

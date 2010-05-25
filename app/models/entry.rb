@@ -126,8 +126,9 @@ class Entry < ActiveRecord::Base
     self.done_date = built[:done_date]
     self.seconds_limit = built[:limit]
     
-    self.seconds = current_time unless self.done_date.nil?
+    
     self.start if self.start_date.nil?
+    self.seconds = current_time
   end
   
   def check_entry_update
@@ -148,8 +149,9 @@ class Entry < ActiveRecord::Base
         self.seconds_limit = built[:limit]
       end
     end
-    
-    self.seconds = current_time unless self.done_date.nil?
+
+    self.start if self.start_date.nil?
+    self.seconds = current_time
   end
   
   def terminate
@@ -172,7 +174,7 @@ class Entry < ActiveRecord::Base
   def current_time
     if self.done_date.nil?
       # Use start
-      Time.now - self.start_date rescue 4
+     Time.now - self.start_date
     else
       # Diff between start and end
       self.done_date - self.original_start rescue 10

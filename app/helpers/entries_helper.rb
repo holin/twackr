@@ -21,18 +21,17 @@ module EntriesHelper
     hours = minutes / 60.0   # 0.3
     hours = hours.floor
     minutes = (minutes - (hours * 60.0)).floor
-    
-    #return "#{hours}H#{minutes}M#{seconds}S"
       
-    if hours < 1.0
+    interval =if hours < 1
       if minutes < 1
-        return "#{seconds}S"
+         "#{seconds}S"
       else
-        return "#{minutes}M"
+         "#{minutes}M"
       end
     else
-      return "#{hours}H#{minutes}M"
+      "#{hours}H#{minutes}M"
     end
+    interval
   end
   
   def make_entry_groups(entries)
